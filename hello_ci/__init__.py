@@ -7,6 +7,8 @@ class HelloCI:
             self.name = "Travis"
         elif os.getenv("CIRCLECI") == "true":
             self.name = "Circle"
+        elif os.getenv("DRONE") == "true":
+            self.name = "Drone"
         else:
             self.name = "World"
 
