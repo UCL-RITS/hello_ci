@@ -1,4 +1,4 @@
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -23,3 +23,4 @@ jobs:
         run: |
           pip install pytest
           pytest
+          python -c "from hello_ci import HelloCI; HelloCI().greet()"
