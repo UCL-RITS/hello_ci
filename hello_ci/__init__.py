@@ -11,6 +11,8 @@ class HelloCI:
             self.name = "Drone"
         elif os.getenv("GITHUB_ACTIONS") == "true":
             self.name = "GitHub Actions"
+        elif os.getenv("GITLAB_CI") == "true":
+            self.name = "GitLab Pipelines"
         elif os.environ.get("GO_PIPELINE_NAME"):
             # There isn't an environment variable with a fixed value.
             self.name = "GoCD"

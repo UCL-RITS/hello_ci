@@ -1,0 +1,12 @@
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+  - apt-get update -qy
+  - apt-get install -y python-dev python-pip
+  - pip install ".[dev]"
+  - pytest
+  - python3 -c 'from hello_ci import HelloCI; HelloCI().greet()'
