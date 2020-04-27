@@ -1,20 +1,24 @@
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+    tags: ["*"]
+  pull_request:
 
 jobs:
   build:
-    runs-on: self-hosted
-    name: Python on mose's computer
+    runs-on: [self-hosted, test]
+    name: Python on test's computer
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: |
-          python -m venv env
+          python3 -m venv env
           source env/bin/activate
-          python -m pip install --upgrade pip
-          pip install .[dev]
+          python3 -m pip install --upgrade pip
+          pip3 install .[dev]
       - name: Test with pytest
         run: |
           source env/bin/activate
-          pip install pytest
+          pip3 install pytest
           pytest
-          python -c "from hello_ci import HelloCI; HelloCI().greet()"
+          python3 -c "from hello_ci import HelloCI; HelloCI().greet()"
