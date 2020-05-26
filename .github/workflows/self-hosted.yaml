@@ -22,3 +22,6 @@ jobs:
           pip3 install pytest
           pytest
           python3 -c "from hello_ci import HelloCI; HelloCI().greet()"
+      - name: Say hello to RSDG
+        run: |
+          echo 'Hello RSDG!'
