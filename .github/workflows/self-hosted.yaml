@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: |
-          echo "hello world"
+          echo "hello cruel world"
       - name: Test with pytest
         run: |
           echo 'Ciao mondo!'
