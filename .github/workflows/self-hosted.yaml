@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, test]
+    runs-on: [self-hosted]
     name: Python on test's computer
     steps:
       - uses: actions/checkout@v1
